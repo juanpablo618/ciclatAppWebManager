@@ -39,7 +39,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Crea tu Cuenta!</h1>
               </div>
-              <form class="user" method="POST" action="http://18.216.97.211/conexionmysql/registro.php">
+              <form class="user" method="POST" action="http://localhost/ciclatAppWebManager/html/conexionmysql/registro.php">
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="text" name="usuario" REQUIRED class="form-control form-control-user" id="exampleFirstName" placeholder="Nombre de Usuario">
@@ -72,7 +72,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-        <input type="submit" class="btn btn-success" value="Enviar Solicitud" href="http://18.216.97.211/login.php">
+        <input type="submit" class="btn btn-success" value="Enviar Solicitud" href="http://localhost/ciclatAppWebManager/html/login.php">
       </div>
     </div>
   </div>

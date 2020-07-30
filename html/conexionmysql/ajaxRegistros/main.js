@@ -18,7 +18,7 @@ $(document).ready(function() {
     scrollCollapse: true,
     	    order: [[5, 'desc']],
         "ajax":{            
-            "url": "http://18.216.97.211/conexionmysql/ajaxRegistros/db/crud.php", 
+            "url": "http://localhost/ciclatAppWebManager/html/conexionmysql/ajaxRegistros/db/crud.php", 
             "method": 'POST', //usamos el metodo POST
             "data":{opcion:opcion}, //enviamos opcion 4 para que haga un SELECT
             "dataSrc":""
@@ -114,7 +114,7 @@ $(document).ready(function() {
         version = $.trim($('#version').val());
     	
             $.ajax({
-              url: "http://18.216.97.211/conexionmysql/ajaxRegistros/db/crud.php",
+              url: "http://localhost/ciclatAppWebManager/html/conexionmysql/ajaxRegistros/db/crud.php",
               type: "POST",
               datatype:"json",    
               data:  {
@@ -385,7 +385,7 @@ $(document).ready(function() {
         var respuesta = confirm("¿Está seguro de borrar el registro con IMEI= "+IMEI+"?");                
         if (respuesta) {            
             $.ajax({
-              url: "http://18.216.97.211/conexionmysql/ajaxRegistros/db/crud.php",
+              url: "http://localhost/ciclatAppWebManager/html/conexionmysql/ajaxRegistros/db/crud.php",
               type: "POST",
               datatype:"json",    
               data:  {opcion:opcion,IMEI:IMEI},    

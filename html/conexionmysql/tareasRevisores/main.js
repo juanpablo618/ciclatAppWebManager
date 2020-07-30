@@ -173,7 +173,7 @@ $('#formUsuarios1').submit(function(e){
     Revisor = $.trim($('#Revisor').val());                        
 
         $.ajax({
-          url: "http://18.216.97.211/conexionmysql/ajax/baseDeDatos/crud.php",
+          url: "http://localhost/ciclatAppWebManager/html/conexionmysql/ajax/baseDeDatos/crud.php",
           type: "POST",
           datatype:"json",    
           data:  {IMEI:IMEI, Riesgo:Riesgo,Tiempo:Tiempo,Descripcion:Descripcion,Revisor:Revisor,opcion:opcion},    

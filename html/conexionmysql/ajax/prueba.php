@@ -10,7 +10,7 @@ $varses1 = $_SESSION['usuario'];
 if($varses1== null|| $varses1=''){
 	
 	echo "NO";
-	header('Location: http://18.216.97.211/login.php');
+	header('Location: http://localhost/ciclatAppWebManager/html/login.php');
 }
 //include 'conexionmysql/sesiones.php';
 ?>
@@ -30,13 +30,13 @@ if($varses1== null|| $varses1=''){
   <title>Ciclat Web Manager | Emparejamiento</title>
 
   <!-- Custom fonts for this template-->
-  <link href="http://18.216.97.211/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="http://localhost/ciclatAppWebManager/html/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
 <link rel="icon" href="https://tiendaciclat.com/wp-content/uploads/2020/04/cropped-favicon3-32x32.png" sizes="32x32">
 
   <!-- Custom styles for this template-->
-  <link href="http://18.216.97.211/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="http://localhost/ciclatAppWebManager/html/css/sb-admin-2.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" >
 <link rel="stylesheet" href="https://cdn.datatables.net/select/1.3.1/css/select.bootstrap4.min.css" >
@@ -53,7 +53,7 @@ if($varses1== null|| $varses1=''){
    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://18.216.97.211/index.php">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="http://localhost/ciclatAppWebManager/html/index.php">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -65,7 +65,7 @@ if($varses1== null|| $varses1=''){
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Inicio</span></a>
       </li>
@@ -87,25 +87,25 @@ if($varses1== null|| $varses1=''){
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desarrollo:</h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin">phpMyAdmin</a>
           </div>
         </div>
       </li>
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="http://18.216.97.211/#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="http://localhost/ciclatAppWebManager/html/#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
           <span>Utilidades</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Utilidades Personalizadas:</h6>
-            <a class="collapse-item" href="http://18.216.97.211/utilities-color.html">Colores</a>
-            <a class="collapse-item" href="http://18.216.97.211/utilities-border.html">Bordes</a>
-            <a class="collapse-item" href="http://18.216.97.211/utilities-animation.html">Animaciones</a>
-            <a class="collapse-item" href="http://18.216.97.211/utilities-other.html">Otros</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/utilities-color.html">Colores</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/utilities-border.html">Bordes</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/utilities-animation.html">Animaciones</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/utilities-other.html">Otros</a>
           </div>
         </div>
       </li>
@@ -120,7 +120,7 @@ if($varses1== null|| $varses1=''){
 
       <!-- Nav Item - Charts -->
       <li class="nav-item active">
-        <a class="nav-link" href="http://18.216.97.211/charts.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/charts.php">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Match</span></a>
       </li>
@@ -134,23 +134,23 @@ if($varses1== null|| $varses1=''){
         <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header"><strong>Tablas: </strong> </h6>
-            <a class="collapse-item" href="http://18.216.97.211/tables3.php" >Ventas</a>
-            <a class="collapse-item" href="http://18.216.97.211/eliminados.php" >Eliminados</a>
-            <a class="collapse-item" href="http://18.216.97.211/tables2.php" >Todos</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/tables3.php" >Ventas</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/eliminados.php" >Eliminados</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/tables2.php" >Todos</a>
           </div>
         </div>
       </li>
    
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/tables.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/tables.php">
           <i class="fas fa-fw fa-tasks"></i>
           <span>Tareas</span></a>
       </li>
 	
     <!-- Nav Item - Tables -->
       <li class="nav-item ">
-        <a class="nav-link" href="http://18.216.97.211/conexionmysql/datatable/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/conexionmysql/datatable/index.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Repuestos</span></a>
       </li>
@@ -210,7 +210,7 @@ if($varses1== null|| $varses1=''){
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"> <?php echo $_SESSION['usuario']?></span>
-                <img class="img-profile rounded-circle" src="http://18.216.97.211/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
+                <img class="img-profile rounded-circle" src="http://localhost/ciclatAppWebManager/html/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -468,12 +468,12 @@ if($varses1== null|| $varses1=''){
 
   <!-- Bootstrap core JavaScript-->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="http://18.216.97.211/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="http://localhost/ciclatAppWebManager/html/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
   <!-- Core plugin JavaScript-->
-  <script src="http://18.216.97.211/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="http://localhost/ciclatAppWebManager/html/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

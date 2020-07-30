@@ -1,7 +1,7 @@
 <?php
 
 		$user="root";
-        $pass="administrador";
+        $pass="";
         $db="database";
         $conexion=new mysqli("localhost",$user,$pass,$db);
 
@@ -25,11 +25,11 @@ if($pass1==$pass2){
                   echo no;
                         die("Connection failed: " . $resultado->error);
                     }
-			header('Location: http://18.216.97.211/');
+			header('Location: http://localhost/ciclatAppWebManager/html/');
 }else{
   	
 	echo 'Las contraseñas no coinciden, vuelva a llenar el formulario';
-	//header('Location: http://18.216.97.211/404.html');
+	//header('Location: http://localhost/ciclatAppWebManager/html/404.html');
 }
 
 ?>
@@ -37,7 +37,7 @@ if($pass1==$pass2){
 <html>
 
 <body>
-<button onclick="location.href='http://18.216.97.211/'">Llévame a otro lado</button>
+<button onclick="location.href='http://localhost/ciclatAppWebManager/html/'">Llévame a otro lado</button>
 </body>
 
 </html>

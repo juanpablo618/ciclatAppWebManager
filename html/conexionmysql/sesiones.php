@@ -3,7 +3,7 @@ session_start();
 
 if(!isset($_SESSION['usuario'])){
 		
-		header("Location: http://18.216.97.211/login.php");
+		header("Location: http://localhost/ciclatAppWebManager/html/login.php");
 echo "No autorizado";
 }{
 

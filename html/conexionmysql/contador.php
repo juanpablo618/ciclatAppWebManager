@@ -1,5 +1,12 @@
 <?php
+/* para producción
 $mysqli = new mysqli("localhost", "root", "administrador", "ultimavers_db");
+*/
+
+/* para localhost */
+$mysqli = new mysqli("localhost", "root", "", "ultimavers_db");
+
+define("SELECT_FROM_CELULAR","SELECT * FROM CELULAR");
 
 /* verificar la conexión */
 if (mysqli_connect_errno()) {
@@ -29,7 +36,7 @@ $result = $mysqli->query("SELECT a.ID, COUNT(*) AS num FROM CELULAR AS a GROUP B
 
 //Tel en Buen estado
        
-$resultado = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Listo para vender' OR estado='Listo para Vender' OR estado='Para vender'"); 
+$resultado = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='Listo para vender' OR estado='Listo para Vender' OR estado='Para vender'"); 
 
     /* determinar el número de filas del resultado */
     $row_cuenta = $resultado->num_rows;
@@ -39,7 +46,7 @@ $resultado = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Listo para vend
 
 //Tel para Reparar
 
-$res = $mysqli->query("SELECT * FROM CELULAR WHERE estado='reparar' OR estado='arreglar' OR estado='Para Reparar' OR estado='Para reparar'"); 
+$res = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='reparar' OR estado='arreglar' OR estado='Para Reparar' OR estado='Para reparar'"); 
 
     /* determinar el número de filas del resultado */
     $row_rep = $res->num_rows;
@@ -49,7 +56,7 @@ $res = $mysqli->query("SELECT * FROM CELULAR WHERE estado='reparar' OR estado='a
 
 //Tel para Repuesto
 
-$res1 = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Repuesto' OR estado='Para Repuesto' OR estado='Repuestos'"); 
+$res1 = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='Repuesto' OR estado='Para Repuesto' OR estado='Repuestos'"); 
 
     /* determinar el número de filas del resultado */
     $row_repu = $res1->num_rows;
@@ -62,7 +69,7 @@ $porcen_repu= $row_repu*100/$row_cnt;
 
 //Tel para Liberar
 
-$res2 = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Vendido' OR estado='Ventas'"); 
+$res2 = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='Vendido' OR estado='Ventas'"); 
 
     /* determinar el número de filas del resultado */
     $row_VendidosTotal = $res2->num_rows;
@@ -72,7 +79,7 @@ $res2 = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Vendido' OR estado='
 
 //Tels Vendidos
 
-$res_ventas = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Vendido' OR estado='Ventas'"); 
+$res_ventas = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='Vendido' OR estado='Ventas'"); 
 
     /* determinar el número de filas del resultado */
     $row_ventas = $res_ventas->num_rows;
@@ -81,7 +88,7 @@ $res_ventas = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Vendido' OR es
     $res2->close();
 
 //Tel mal Cargados Total
-$res3 = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Seleccione' OR estado='' OR Marca='Seleccione' OR Modelo='Seleccione' OR Revisor='Seleccione'"); 
+$res3 = $mysqli->query(SELECT_FROM_CELULAR." WHERE estado='Seleccione' OR estado='' OR Marca='Seleccione' OR Modelo='Seleccione' OR Revisor='Seleccione'"); 
 
     /* determinar el número de filas del resultado */
     $row_mal = $res3->num_rows;
@@ -92,7 +99,7 @@ $res3 = $mysqli->query("SELECT * FROM CELULAR WHERE estado='Seleccione' OR estad
 $date1 = date( "Y-m-d" );
 
 //Tel mal Cargados Hoy
-$res4 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Seleccione' AND Fecha='$date1' OR Estado='' AND Fecha='$date1' OR Marca='Seleccione' AND Fecha='$date1' OR Modelo='Seleccione' AND Fecha='$date1' OR Revisor='Seleccione' AND Fecha='$date1'"); 
+$res4 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Seleccione' AND Fecha='$date1' OR Estado='' AND Fecha='$date1' OR Marca='Seleccione' AND Fecha='$date1' OR Modelo='Seleccione' AND Fecha='$date1' OR Revisor='Seleccione' AND Fecha='$date1'"); 
 
     /* determinar el número de filas del resultado */
     $row_mal2 = $res4->num_rows;
@@ -103,7 +110,7 @@ $res4 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Seleccione' AND Fech
 $date2 = date( "Y-m-d", strtotime( "-1 day", strtotime( $date1 ) ) );
 
 //Tel Modulo dañado - Liberados - Para reparar
-$res5 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Reparar' AND Modulo='NO' AND Liberar='-' AND Estetica='A' OR Estado='Reparar' AND Modulo='NO' AND Liberar='-' AND Estetica='B'");
+$res5 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Reparar' AND Modulo='NO' AND Liberar='-' AND Estetica='A' OR Estado='Reparar' AND Modulo='NO' AND Liberar='-' AND Estetica='B'");
     /* determinar el número de filas del resultado */
     $row_modulo = $res5->num_rows;
 
@@ -111,14 +118,14 @@ $res5 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Reparar' AND Modulo=
     $res5->close();
 
 //Tel a Liberar
-$resLib = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Liberar' ");
+$resLib = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Liberar' ");
     $row_lib = $resLib->num_rows;
 
     /* cerrar el resultset */
     $resLib->close();
 
 //Tel Vendidos
-$resVentas = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' OR Estado='Ventas' ");
+$resVentas = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' OR Estado='Ventas' ");
     $row_ventas = $resVentas->num_rows;
 
     /* cerrar el resultset */
@@ -165,10 +172,10 @@ $ModeloHoy = mysqli_query($mysqli, $queryModeloHoy);
 
 // Resultados del Dia por Revisor
  
-$revisor1 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Benjamin' AND Fecha='$date'");
-$revisor2 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Lucrecio' AND Fecha='$date'");
-$revisor3 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='facundo' AND Fecha='$date' OR Revisor='Facundo'  AND Fecha LIKE '$date'");
-$revisor5 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Feli' AND Fecha='$date'");
+$revisor1 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Benjamin' AND Fecha='$date'");
+$revisor2 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Lucrecio' AND Fecha='$date'");
+$revisor3 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='facundo' AND Fecha='$date' OR Revisor='Facundo'  AND Fecha LIKE '$date'");
+$revisor5 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Feli' AND Fecha='$date'");
 
 $row_cantidad1 =$revisor1->num_rows;
 $row_cantidad2 =$revisor2->num_rows;
@@ -184,11 +191,11 @@ $query_ayer4 = date( "Y-m-d", strtotime( "-1 day", strtotime( $date ) ) );
 
 
 //Cantidad Listos para vender por dia
-$query_1 =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer1' AND Estado='Listo para vender'");  
-$query_2 =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer2' AND Estado='Listo para vender'");  
-$query_3 =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer3' AND Estado='Listo para vender'");  
-$query_4 =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer4' AND Estado='Listo para vender'");  
-$query_5 =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$date' AND Estado='Listo para vender'");
+$query_1 =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer1' AND Estado='Listo para vender'");  
+$query_2 =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer2' AND Estado='Listo para vender'");  
+$query_3 =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer3' AND Estado='Listo para vender'");  
+$query_4 =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer4' AND Estado='Listo para vender'");  
+$query_5 =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$date' AND Estado='Listo para vender'");
 
 
 $row_fecha1 =$query_1->num_rows;
@@ -200,10 +207,10 @@ $row_fecha5 =$query_5->num_rows;
 
 // Contador Cargas mensuales por Revisor 
 
-$revisorMes1 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Benjamin' AND Fecha LIKE '%$mesDate%'");
-$revisorMes2 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Lucrecio' AND Fecha LIKE '%$mesDate%'");
-$revisorMes3 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Facundo'  AND Fecha LIKE '%$mesDate%' OR Revisor='facundo'  AND Fecha LIKE '%$mesDate%'");
-$revisorMes5 = $mysqli->query("SELECT * FROM CELULAR WHERE Revisor='Feli'     AND Fecha LIKE '%$mesDate%'");
+$revisorMes1 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Benjamin' AND Fecha LIKE '%$mesDate%'");
+$revisorMes2 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Lucrecio' AND Fecha LIKE '%$mesDate%'");
+$revisorMes3 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Facundo'  AND Fecha LIKE '%$mesDate%' OR Revisor='facundo'  AND Fecha LIKE '%$mesDate%'");
+$revisorMes5 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Revisor='Feli'     AND Fecha LIKE '%$mesDate%'");
 
 $row_mes1 =$revisorMes1->num_rows;
 $row_mes2 =$revisorMes2->num_rows;
@@ -212,18 +219,18 @@ $row_mes5 =$revisorMes5->num_rows;
 
 // Contador Listos para vender Mensuales
 
-$VentasMes1  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-01-%' ");
-$VentasMes2  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-02-%' ");
-$VentasMes3  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-03-%' ");
-$VentasMes4  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-04-%' ");
-$VentasMes5  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-05-%' ");
-$VentasMes6  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-06-%' ");
-$VentasMes7  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-07-%' ");
-$VentasMes8  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-08-%' ");
-$VentasMes9  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-09-%' ");
-$VentasMes10 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-10-%' ");
-$VentasMes11 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-11-%' ");
-$VentasMes12 = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-12-%' ");
+$VentasMes1  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-01-%' ");
+$VentasMes2  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-02-%' ");
+$VentasMes3  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-03-%' ");
+$VentasMes4  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-04-%' ");
+$VentasMes5  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-05-%' ");
+$VentasMes6  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-06-%' ");
+$VentasMes7  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-07-%' ");
+$VentasMes8  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-08-%' ");
+$VentasMes9  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-09-%' ");
+$VentasMes10 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-10-%' ");
+$VentasMes11 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-11-%' ");
+$VentasMes12 = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Listo para Vender' And Fecha LIKE '%$Anual-12-%' ");
 
 $row_mesVentas1  =$VentasMes1->num_rows;
 $row_mesVentas2  =$VentasMes2->num_rows;
@@ -241,18 +248,18 @@ $row_mesVentas12 =$VentasMes12->num_rows;
 
 //Contador Marcados como Vendidos Mensual
 
-$VentasMes1_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-01-%' ");
-$VentasMes2_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-02-%' ");
-$VentasMes3_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-03-%' ");
-$VentasMes4_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-04-%' ");
-$VentasMes5_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-05-%' ");
-$VentasMes6_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-06-%' ");
-$VentasMes7_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-07-%' ");
-$VentasMes8_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-08-%' ");
-$VentasMes9_Vendido  = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-09-%' ");
-$VentasMes10_Vendido = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-10-%' ");
-$VentasMes11_Vendido = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-11-%' ");
-$VentasMes12_Vendido = $mysqli->query("SELECT * FROM CELULAR WHERE Estado='Vendido' And Fecha LIKE '%$Anual-12-%' ");
+$VentasMes1_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-01-%' ");
+$VentasMes2_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-02-%' ");
+$VentasMes3_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-03-%' ");
+$VentasMes4_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-04-%' ");
+$VentasMes5_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-05-%' ");
+$VentasMes6_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-06-%' ");
+$VentasMes7_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-07-%' ");
+$VentasMes8_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-08-%' ");
+$VentasMes9_Vendido  = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-09-%' ");
+$VentasMes10_Vendido = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-10-%' ");
+$VentasMes11_Vendido = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-11-%' ");
+$VentasMes12_Vendido = $mysqli->query(SELECT_FROM_CELULAR." WHERE Estado='Vendido' And Fecha LIKE '%$Anual-12-%' ");
 
 $row_mesVentas1_Vendido  =$VentasMes1_Vendido ->num_rows;
 $row_mesVentas2_Vendido  =$VentasMes2_Vendido ->num_rows;
@@ -269,11 +276,11 @@ $row_mesVentas12_Vendido =$VentasMes12_Vendido->num_rows;
 
 
 //Cantidad Vendido vender por dia
-$query_1Vendido =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer1' AND Estado='Vendido'");  
-$query_2Vendido =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer2' AND Estado='Vendido'");  
-$query_3Vendido =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer3' AND Estado='Vendido'");  
-$query_4Vendido =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$query_ayer4' AND Estado='Vendido'");  
-$query_5Vendido =$mysqli->query("SELECT * FROM CELULAR WHERE Fecha= '$date' AND Estado='Vendido'");
+$query_1Vendido =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer1' AND Estado='Vendido'");  
+$query_2Vendido =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer2' AND Estado='Vendido'");  
+$query_3Vendido =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer3' AND Estado='Vendido'");  
+$query_4Vendido =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$query_ayer4' AND Estado='Vendido'");  
+$query_5Vendido =$mysqli->query(SELECT_FROM_CELULAR." WHERE Fecha= '$date' AND Estado='Vendido'");
 
 
 $row_fecha1Vendido =$query_1Vendido->num_rows;

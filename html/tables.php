@@ -83,8 +83,8 @@ include 'conexionmysql/contador.php';
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desarrollo:</h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin">phpMyAdmin</a>
           </div>
         </div>
       </li>
@@ -192,7 +192,7 @@ include 'conexionmysql/contador.php';
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"><?php echo $_SESSION['usuario']?></span>
-                <img class="img-profile rounded-circle" src="http://18.216.97.211/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
+                <img class="img-profile rounded-circle" src="http://localhost/ciclatAppWebManager/html/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

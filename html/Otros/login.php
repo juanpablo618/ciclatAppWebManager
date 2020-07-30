@@ -54,7 +54,7 @@ if(<?php echo $varE; ?> === 1){
                   <h1 class="h4 text-gray-900 mb-3">Inicie sesion para usar las funciones.</h1>
                   </div>
                 <hr>
-                  <form class="user" method="POST" action="http://18.216.97.211/Otros/db/validacion.php">
+                  <form class="user" method="POST" action="http://localhost/ciclatAppWebManager/html/Otros/db/validacion.php">
                     <div class="form-group">
                       <input type="user" REQUIRED name="usuario" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nombre de Usuario...">
                     </div>
