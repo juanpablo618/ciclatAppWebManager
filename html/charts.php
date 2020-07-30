@@ -91,8 +91,8 @@ if($varses1== null|| $varses1=''){
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desarrollo:</h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin">phpMyAdmin</a>
           </div>
         </div>
       </li>
@@ -144,7 +144,7 @@ if($varses1== null|| $varses1=''){
 	  
     <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/conexionmysql/datatable/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/conexionmysql/datatable/index.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Repuestos</span></a>
       </li>
@@ -204,7 +204,7 @@ if($varses1== null|| $varses1=''){
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"> <?php echo $_SESSION['usuario']?></span>
-                <img class="img-profile rounded-circle" src="http://18.216.97.211/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
+                <img class="img-profile rounded-circle" src="http://localhost/ciclatAppWebManager/html/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -251,7 +251,7 @@ if($varses1== null|| $varses1=''){
             </center>
             <div class="card-body bg-dark">
             <center>
-            <a href="http://18.216.97.211/conexionmysql/ajax/prueba.php" class="btn btn-success">Nuevo Matcheo!</a>
+            <a href="http://localhost/ciclatAppWebManager/html/conexionmysql/ajax/prueba.php" class="btn btn-success">Nuevo Matcheo!</a>
             </center>   
             </div>
           </div>
@@ -510,12 +510,12 @@ if($varses1== null|| $varses1=''){
 
   <!-- Bootstrap core JavaScript-->
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="http://18.216.97.211/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="http://localhost/ciclatAppWebManager/html/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
   <!-- Core plugin JavaScript-->
-  <script src="http://18.216.97.211/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="http://localhost/ciclatAppWebManager/html/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

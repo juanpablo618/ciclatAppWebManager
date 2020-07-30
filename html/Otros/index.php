@@ -84,8 +84,8 @@ location.reload(true)
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header"><strong>Ajustes: </strong> </h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/" target="_blank">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin" target="_blank">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/" target="_blank">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin" target="_blank">phpMyAdmin</a>
           </div>
         </div>
       </li>
@@ -139,7 +139,7 @@ location.reload(true)
 
     <!-- Nav Item - Repuestos -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/conexionmysql/datatable/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/conexionmysql/datatable/index.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Repuestos</span></a>
       </li>
@@ -187,7 +187,7 @@ location.reload(true)
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"><?php echo $_SESSION['usuario']; ?></span>
-                <img class="img-profile rounded-circle" src=http://18.216.97.211/<?php echo $varses2 ?> size=60x60>
+                <img class="img-profile rounded-circle" src=http://localhost/ciclatAppWebManager/html/<?php echo $varses2 ?> size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

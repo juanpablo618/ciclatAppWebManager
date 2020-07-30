@@ -6,7 +6,7 @@ session_start();
 $varses1=$_SESSION['usuario'];
 
 if($varses1==null|| $varses1=''){
-	header("Location: http://18.216.97.211/login.php");
+	header("Location: http://localhost/ciclatAppWebManager/html/login.php");
 	echo "NO";
 	die();
 }
@@ -34,7 +34,7 @@ $sql = "DELETE FROM `Tareas` WHERE tarea='$tarea' AND nombre='$varses1' ";
 
 if ($conn->query($sql) === TRUE) {
 
-    header('Location: http://18.216.97.211/tables.php');
+    header('Location: http://localhost/ciclatAppWebManager/html/tables.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

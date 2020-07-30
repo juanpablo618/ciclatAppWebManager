@@ -6,7 +6,7 @@ session_start();
 $varses1 = $_SESSION['usuario'];
 //echo $varses1;
 if($varses1== null|| $varses1=''){
-	header("Location: http://18.216.97.211/login.php");
+	header("Location: http://localhost/ciclatAppWebManager/html/login.php");
 	echo "NO";
 	die();
 }
@@ -87,7 +87,7 @@ $sql1="INSERT INTO VENTAS(`ID`, `IMEI`, `Marca`, `Modelo`, `Fecha`, `Revisor`, `
 
 
 if ($conn->query($sql1) === TRUE) {
-   // header('Location: http://18.216.97.211/tables2.php');
+   // header('Location: http://localhost/ciclatAppWebManager/html/tables2.php');
 } else {
     echo "Error: " . $sql1 . "<br>" . $conn->error;
 }
@@ -95,7 +95,7 @@ if ($conn->query($sql1) === TRUE) {
 
 if ($conn->query($sql) === TRUE) {
 echo ok;
-   header('Location: http://18.216.97.211/tables2.php');
+   header('Location: http://localhost/ciclatAppWebManager/html/tables2.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -108,7 +108,7 @@ $sql2="INSERT INTO CELULAR(`ID`, `IMEI`, `Marca`, `Modelo`, `Fecha`, `Revisor`, 
 
 
 if ($conn1->query($sql2) === TRUE) {
-   // header('Location: http://18.216.97.211/tables2.php');
+   // header('Location: http://localhost/ciclatAppWebManager/html/tables2.php');
 } else {
     echo "Error: " . $sql2 . "<br>" . $conn1->error;
 }

@@ -8,7 +8,7 @@ $pass1=$_REQUEST['pass'];
 //echo $pass1;
 
 		$user="root";
-        $pass="administrador";
+        $pass="";
         $db="database";
         $conexion=new mysqli("localhost",$user,$pass,$db);
 $resultado = $conexion->query("SELECT * FROM Usuarios WHERE usuario='$user1' AND pass='$pass1'"); 
@@ -47,10 +47,10 @@ if($filas>0){
 		//$varses2 =$_SESSION['Avatar'];
 		echo $varses;
 		//echo "ok";
-		header("Location: http://18.216.97.211/index.php");
+		header("Location: http://localhost/ciclatAppWebManager/html/index.php");
 }else{
 //echo $filas;
-		header("Location: http://18.216.97.211/login.php?sn=1");
+		header("Location: http://localhost/ciclatAppWebManager/html/login.php?sn=1");
 		//echo "error";
 		
 }

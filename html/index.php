@@ -56,8 +56,8 @@ location.reload(true)
            <script type="text/javascript"> 
            
           google.charts.load('current', {'packages':['corechart']});          
-           google.charts.setOnLoadCallback(drawChart); 
-           google.charts.setOnLoadCallback(ListosDia); 
+          google.charts.setOnLoadCallback(drawChart); 
+          google.charts.setOnLoadCallback(ListosDia); 
           google.charts.setOnLoadCallback(cargadia);
 
       //Graficas Cargas Revisores 
@@ -129,21 +129,22 @@ location.reload(true)
            
               
            function ListosMes(){
-                     
+              var greenColor = "color:green";
+ 
        var data = google.visualization.arrayToDataTable([
-         ['Mes', 'Cantidad de Listos para Vender este Mes', { role: 'style' }],
-         ['Enero', <?php echo       $row_mesVentas1 ?>, 'color:green'  ],
-          ['Febrero', <?php echo     $row_mesVentas2 ?>, 'color:green'],
-          ['Marzo',  <?php echo      $row_mesVentas3 ?>, 'color:green'  ],
-          ['Abril', <?php echo       $row_mesVentas4 ?>, 'color:green'  ],
-          ['Mayo',  <?php echo       $row_mesVentas5 ?>, 'color:green' ],
-          ['Junio',  <?php echo      $row_mesVentas6 ?>, 'color:green' ],
-          ['Julio',  <?php echo      $row_mesVentas7 ?>, 'color:green' ],
-          ['Agosto',  <?php echo     $row_mesVentas8 ?>, 'color:green' ],
-          ['Septiembre',  <?php echo $row_mesVentas9 ?>, 'color:green' ],
-          ['Octubre',  <?php echo    $row_mesVentas10 ?>, 'color:green' ],
-          ['Noviembre',  <?php echo  $row_mesVentas11 ?>, 'color:green' ],
-          ['Diciembre',  <?php echo  $row_mesVentas12 ?>, 'color:green' ], // CSS-style declaration
+          ['Mes', 'Cantidad de Listos para Vender este Mes', { role: 'style' }],
+          ['Enero', <?php echo       $row_mesVentas1 ?>, greenColor ],
+          ['Febrero', <?php echo     $row_mesVentas2 ?>, greenColor ],
+          ['Marzo',  <?php echo      $row_mesVentas3 ?>, greenColor ],
+          ['Abril', <?php echo       $row_mesVentas4 ?>, greenColor ],
+          ['Mayo',  <?php echo       $row_mesVentas5 ?>, greenColor ],
+          ['Junio',  <?php echo      $row_mesVentas6 ?>, greenColor ],
+          ['Julio',  <?php echo      $row_mesVentas7 ?>, greenColor ],
+          ['Agosto',  <?php echo     $row_mesVentas8 ?>, greenColor ],
+          ['Septiembre',  <?php echo $row_mesVentas9 ?>, greenColor ],
+          ['Octubre',  <?php echo    $row_mesVentas10 ?>, greenColor ],
+          ['Noviembre',  <?php echo  $row_mesVentas11 ?>, greenColor ],
+          ['Diciembre',  <?php echo  $row_mesVentas12 ?>, greenColor ], // CSS-style declaration
       ]);
 
         var options = {title:'Total Registrados como Listos para Vender por Mes',
@@ -184,21 +185,22 @@ location.reload(true)
       }   
            
             function Vendidos_Mes(){
-                     
+              var greenColor = "color:green";
+
        var data = google.visualization.arrayToDataTable([
           ['Mes', 'Cantidad de Vendidos', { role: 'style' }],
-          ['Enero', <?php echo       $row_mesVentas1_Vendido ?>, 'color:green'  ],
-          ['Febrero', <?php echo     $row_mesVentas2_Vendido ?>, 'color:green'],
-          ['Marzo',  <?php echo      $row_mesVentas3_Vendido ?>, 'color:green'  ],
-          ['Abril', <?php echo       $row_mesVentas4_Vendido ?>, 'color:green'  ],
-          ['Mayo',  <?php echo       $row_mesVentas5_Vendido ?>, 'color:green' ],
-          ['Junio',  <?php echo      $row_mesVentas6_Vendido ?>, 'color:green' ],
-          ['Julio',  <?php echo      $row_mesVentas7_Vendido ?>, 'color:green' ],
-          ['Agosto',  <?php echo     $row_mesVentas8_Vendido ?>, 'color:green' ],
-          ['Septiembre',  <?php echo $row_mesVentas9_Vendido ?>, 'color:green' ],
-          ['Octubre',  <?php echo    $row_mesVentas10_Vendido ?>, 'color:green' ],
-          ['Noviembre',  <?php echo  $row_mesVentas11_Vendido ?>, 'color:green' ],
-          ['Diciembre',  <?php echo  $row_mesVentas12_Vendido ?>, 'color:green' ], // CSS-style declaration
+          ['Enero', <?php echo       $row_mesVentas1_Vendido ?>, greenColor  ],
+          ['Febrero', <?php echo     $row_mesVentas2_Vendido ?>, greenColor],
+          ['Marzo',  <?php echo      $row_mesVentas3_Vendido ?>, greenColor  ],
+          ['Abril', <?php echo       $row_mesVentas4_Vendido ?>, greenColor  ],
+          ['Mayo',  <?php echo       $row_mesVentas5_Vendido ?>, greenColor ],
+          ['Junio',  <?php echo      $row_mesVentas6_Vendido ?>, greenColor ],
+          ['Julio',  <?php echo      $row_mesVentas7_Vendido ?>, greenColor ],
+          ['Agosto',  <?php echo     $row_mesVentas8_Vendido ?>, greenColor ],
+          ['Septiembre',  <?php echo $row_mesVentas9_Vendido ?>, greenColor ],
+          ['Octubre',  <?php echo    $row_mesVentas10_Vendido ?>, greenColor ],
+          ['Noviembre',  <?php echo  $row_mesVentas11_Vendido ?>, greenColor ],
+          ['Diciembre',  <?php echo  $row_mesVentas12_Vendido ?>, greenColor ], // CSS-style declaration
       ]);
 
         var options = {title:'Total Registrados Vendidos por Mes',
@@ -444,8 +446,8 @@ location.reload(true)
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
           <h6 class="collapse-header"><strong>Ajustes: </strong> </h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/" target="_blank">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin" target="_blank">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/" target="_blank">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin" target="_blank">phpMyAdmin</a>
           </div>
         </div>
       </li>
@@ -499,7 +501,7 @@ location.reload(true)
 
     <!-- Nav Item - Repuestos -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/conexionmysql/datatable/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/conexionmysql/datatable/index.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Repuestos</span></a>
       </li>
@@ -547,7 +549,7 @@ location.reload(true)
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"><?php echo $_SESSION['usuario']; ?></span>
-                <img class="img-profile rounded-circle" src=http://18.216.97.211/<?php echo $varses2 ?> size=60x60>
+                <img class="img-profile rounded-circle" src=http://localhost/ciclatAppWebManager/html/<?php echo $varses2 ?> size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

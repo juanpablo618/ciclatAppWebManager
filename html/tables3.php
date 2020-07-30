@@ -6,7 +6,7 @@ date_default_timezone_set('America/Argentina/Buenos_Aires');
 if($_SESSION['usuario']!= 'root1'){
 
 session_destroy();
-	header("Location: http://18.216.97.211/login.php?sn=1");
+	header("Location: http://localhost/ciclatAppWebManager/html/login.php?sn=1");
 }*/
 //include 'conexionmysql/login-user.php';
 
@@ -98,8 +98,8 @@ if($varses1== null|| $varses1=''){
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Desarrollo:</h6>
-            <a class="collapse-item" href="http://18.216.97.211:10000/">WebMin</a>
-            <a class="collapse-item" href="http://18.216.97.211/phpMyAdmin">phpMyAdmin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html:10000/">WebMin</a>
+            <a class="collapse-item" href="http://localhost/ciclatAppWebManager/html/phpMyAdmin">phpMyAdmin</a>
           </div>
         </div>
       </li>
@@ -151,7 +151,7 @@ if($varses1== null|| $varses1=''){
 	  
     <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="http://18.216.97.211/conexionmysql/datatable/index.php">
+        <a class="nav-link" href="http://localhost/ciclatAppWebManager/html/conexionmysql/datatable/index.php">
           <i class="fas fa-fw fa-tools"></i>
           <span>Repuestos</span></a>
       </li>
@@ -198,7 +198,7 @@ if($varses1== null|| $varses1=''){
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-white-600 medium"><?php echo $_SESSION['usuario']; ?></span>
-                <img class="img-profile rounded-circle" src="http://18.216.97.211/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
+                <img class="img-profile rounded-circle" src="http://localhost/ciclatAppWebManager/html/<?php echo $_SESSION['Avatar'] ?>" size=60x60>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -264,7 +264,7 @@ if($varses1== null|| $varses1=''){
               <div class="dropdown">
             
             
-        	<a type="button" id="btnDescarga" href="http://18.216.97.211/conexionmysql/excelVentas.php" >
+        	<a type="button" id="btnDescarga" href="http://localhost/ciclatAppWebManager/html/conexionmysql/excelVentas.php" >
                 <button type='button' id="btnDescarga" class='btn btn-success btn-sm'><span class='fas fa-file-excel' aria-hidden='true'></span> Descargar Excel</button>
             </a>
         	

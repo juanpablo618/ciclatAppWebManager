@@ -6,7 +6,7 @@ session_start();
 $varses1 = $_SESSION['usuario'];
 //echo $varses1;
 if($varses1== null|| $varses1=''){
-	header("Location: http://18.216.97.211/login.php");
+	header("Location: http://localhost/ciclatAppWebManager/html/login.php");
 	echo "NO";
 	die();
 }
@@ -137,7 +137,7 @@ $conn->close();
 	$conn1 = new mysqli('localhost','root','administrador','database');
 
 if ($conn1->query($sql) === TRUE) {
-    header('Location: http://18.216.97.211/tables2.php');
+    header('Location: http://localhost/ciclatAppWebManager/html/tables2.php');
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 
